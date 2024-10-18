@@ -1,4 +1,4 @@
 {
 	"replace": false,
-	"values": ["button_gui:tick"]
+	"values": ["infinite_ender_chest:tick"]
 }

@@ -1,4 +1,4 @@
 {
 	"replace": false,
-	"values": ["oh_my_dat:sys/load", "button_gui:load"]
+	"values": ["oh_my_dat:sys/load", "infinite_ender_chest:load"]
 }
