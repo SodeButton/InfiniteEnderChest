@@ -1,0 +1,27 @@
+function button_gui:gui/replace_gui_item/player_head {name: "CheatMenu", page: "menu/0", slot: 0, gui_id: "Button.Gamemode", item_name: "ゲームモード変更", texture:"eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMTUwMTU0NzBlMjg2ZTRlZDc3YTAzODc2Y2JiZmQ3YjNkMzU4YTYwNjA2YjQ0NmQyYzRiYzhkOGU5YzM3M2VlOSJ9fX0="}
+function button_gui:gui/replace_gui_item/gui_background {name: "CheatMenu", page: "menu/0", slot: 1}
+function button_gui:gui/replace_gui_item/gui_background {name: "CheatMenu", page: "menu/0", slot: 2}
+function button_gui:gui/replace_gui_item/gui_background {name: "CheatMenu", page: "menu/0", slot: 3}
+function button_gui:gui/replace_gui_item/gui_background {name: "CheatMenu", page: "menu/0", slot: 4}
+function button_gui:gui/replace_gui_item/gui_background {name: "CheatMenu", page: "menu/0", slot: 5}
+function button_gui:gui/replace_gui_item/gui_background {name: "CheatMenu", page: "menu/0", slot: 6}
+function button_gui:gui/replace_gui_item/gui_background {name: "CheatMenu", page: "menu/0", slot: 7}
+function button_gui:gui/replace_gui_item/gui_background {name: "CheatMenu", page: "menu/0", slot: 8}
+function button_gui:gui/replace_gui_item/gui_background {name: "CheatMenu", page: "menu/0", slot: 9}
+function button_gui:gui/replace_gui_item/gui_background {name: "CheatMenu", page: "menu/0", slot: 10}
+function button_gui:gui/replace_gui_item/gui_background {name: "CheatMenu", page: "menu/0", slot: 11}
+function button_gui:gui/replace_gui_item/gui_background {name: "CheatMenu", page: "menu/0", slot: 12}
+function button_gui:gui/replace_gui_item/gui_background {name: "CheatMenu", page: "menu/0", slot: 13}
+function button_gui:gui/replace_gui_item/gui_background {name: "CheatMenu", page: "menu/0", slot: 14}
+function button_gui:gui/replace_gui_item/gui_background {name: "CheatMenu", page: "menu/0", slot: 15}
+function button_gui:gui/replace_gui_item/gui_background {name: "CheatMenu", page: "menu/0", slot: 16}
+function button_gui:gui/replace_gui_item/gui_background {name: "CheatMenu", page: "menu/0", slot: 17}
+function button_gui:gui/replace_gui_item/gui_background {name: "CheatMenu", page: "menu/0", slot: 18}
+function button_gui:gui/replace_gui_item/gui_background {name: "CheatMenu", page: "menu/0", slot: 19}
+function button_gui:gui/replace_gui_item/gui_background {name: "CheatMenu", page: "menu/0", slot: 20}
+function button_gui:gui/replace_gui_item/gui_background {name: "CheatMenu", page: "menu/0", slot: 21}
+function button_gui:gui/replace_gui_item/gui_background {name: "CheatMenu", page: "menu/0", slot: 22}
+function button_gui:gui/replace_gui_item/gui_background {name: "CheatMenu", page: "menu/0", slot: 23}
+function button_gui:gui/replace_gui_item/gui_background {name: "CheatMenu", page: "menu/0", slot: 24}
+function button_gui:gui/replace_gui_item/gui_background {name: "CheatMenu", page: "menu/0", slot: 25}
+function button_gui:gui/replace_gui_item/gui_background {name: "CheatMenu", page: "menu/0", slot: 26}

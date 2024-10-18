@@ -1,0 +1,1 @@
+execute as @e[tag=Button.GUI.Close] run tag @s remove Button.GUI.Close
