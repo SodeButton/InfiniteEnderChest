@@ -29,12 +29,13 @@
     execute if data storage infinite_ender_chest:temp {isClicked:true} run kill @e[type=chest_minecart,tag=InfiniteEnderChest]
 
   ## GUI設置
-    execute if data storage infinite_ender_chest:temp {isClicked:true} run item replace entity @s enderchest.8 with arrow[custom_data={InfiniteEnderChest.GUI.Item: {id:"GUI.Previous"}}, item_name='{"text": "前のページ"}'] 1
+    $execute if data storage infinite_ender_chest:temp {isClicked:true} run item replace entity @s enderchest.8 with arrow[custom_data={InfiniteEnderChest.GUI.Item: {id:"GUI.Previous"}}, item_name='{"text": "前のページ"}', lore=['{"text": "($(ender_chest_next_page)/$(ender_chest_max_page))","italic": false, "color": "gray"}']] 1
 
-    $execute if data storage infinite_ender_chest:temp {isClicked:true} run item replace entity @s enderchest.17 with black_stained_glass_pane[custom_data={InfiniteEnderChest.GUI.Item: {id:"GUI.Placeholder"}}, item_name='{"text":"$(ender_chest_next_page)ページ"}'] 1
+    execute if data storage infinite_ender_chest:temp {isClicked:true} run item replace entity @s enderchest.17 with black_stained_glass_pane[custom_data={InfiniteEnderChest.GUI.Item: {id:"GUI.Placeholder"}}, hide_tooltip={}] 1
 
-    execute if score @s InfiniteEnderChest.Page matches ..2 if data storage infinite_ender_chest:temp {isClicked:true} run item replace entity @s enderchest.26 with arrow[custom_data={InfiniteEnderChest.GUI.Item: {id:"GUI.Next"}}, item_name='{"text": "次のページ"}'] 1
-    execute if score @s InfiniteEnderChest.Page matches 3.. if data storage infinite_ender_chest:temp {isClicked:true} run item replace entity @s enderchest.26 with barrier[custom_data={InfiniteEnderChest.GUI.Item: {id:"GUI.End"}}, item_name='{"text": "ここまで"}', rarity="common"] 1
+    $execute if score #next InfiniteEnderChest.Page < @s InfiniteEnderChest.MaxPage if data storage infinite_ender_chest:temp {isClicked:true} run item replace entity @s enderchest.26 with arrow[custom_data={InfiniteEnderChest.GUI.Item: {id:"GUI.Next"}}, item_name='{"text": "次のページ"}',lore=['{"text": "($(ender_chest_next_page)/$(ender_chest_max_page))","italic": false, "color": "gray"}']] 1
+    
+    execute if score #next InfiniteEnderChest.Page >= @s InfiniteEnderChest.MaxPage if data storage infinite_ender_chest:temp {isClicked:true} run item replace entity @s enderchest.26 with black_stained_glass_pane[custom_data={InfiniteEnderChest.GUI.Item: {id:"GUI.End"}}, hide_tooltip={}] 1
 
   ## ボタン押したときの効果音
     execute if data storage infinite_ender_chest:temp {isClicked:true} run playsound ui.button.click master @s
@@ -64,12 +65,12 @@
     execute if data storage infinite_ender_chest:temp {isClicked:true} run kill @e[type=chest_minecart,tag=InfiniteEnderChest]
 
   ## GUI設置
-    execute if score @s InfiniteEnderChest.Page matches 3.. if data storage infinite_ender_chest:temp {isClicked:true} run item replace entity @s enderchest.8 with arrow[custom_data={InfiniteEnderChest.GUI.Item: {id:"GUI.Previous"}}, item_name='{"text": "前のページ"}'] 1
-    execute if score @s InfiniteEnderChest.Page matches ..2 if data storage infinite_ender_chest:temp {isClicked:true} run item replace entity @s enderchest.8 with barrier[custom_data={InfiniteEnderChest.GUI.Item: {id:"GUI.End"}}, item_name='{"text": "ここまで"}', rarity="common"] 1
+    $execute if score @s InfiniteEnderChest.Page matches 3.. if data storage infinite_ender_chest:temp {isClicked:true} run item replace entity @s enderchest.8 with arrow[custom_data={InfiniteEnderChest.GUI.Item: {id:"GUI.Previous"}}, item_name='{"text": "前のページ"}', lore=['{"text": "($(ender_chest_previous_page)/$(ender_chest_max_page))","italic": false, "color": "gray"}']] 1
+    execute if score @s InfiniteEnderChest.Page matches ..2 if data storage infinite_ender_chest:temp {isClicked:true} run item replace entity @s enderchest.8 with black_stained_glass_pane[custom_data={InfiniteEnderChest.GUI.Item: {id:"GUI.End"}}, hide_tooltip={}] 1
 
-    $execute if data storage infinite_ender_chest:temp {isClicked:true} run item replace entity @s enderchest.17 with black_stained_glass_pane[custom_data={InfiniteEnderChest.GUI.Item: {id:"GUI.Placeholder"}}, item_name='{"text":"$(ender_chest_previous_page)ページ"}'] 1
+    execute if data storage infinite_ender_chest:temp {isClicked:true} run item replace entity @s enderchest.17 with black_stained_glass_pane[custom_data={InfiniteEnderChest.GUI.Item: {id:"GUI.Placeholder"}}, hide_tooltip={}] 1
 
-    execute if data storage infinite_ender_chest:temp {isClicked:true} run item replace entity @s enderchest.26 with arrow[custom_data={InfiniteEnderChest.GUI.Item: {id:"GUI.Next"}}, item_name='{"text": "次のページ"}'] 1
+    $execute if data storage infinite_ender_chest:temp {isClicked:true} run item replace entity @s enderchest.26 with arrow[custom_data={InfiniteEnderChest.GUI.Item: {id:"GUI.Next"}}, item_name='{"text": "次のページ"}', lore=['{"text": "($(ender_chest_previous_page)/$(ender_chest_max_page))","italic": false, "color": "gray"}']] 1
 
   ## ボタン押したときの効果音
     execute if data storage infinite_ender_chest:temp {isClicked:true} run playsound ui.button.click master @s
@@ -83,11 +84,9 @@
   execute if data storage infinite_ender_chest:temp {isClicked:true} if items entity @s enderchest.17 *[!custom_data~{"InfiniteEnderChest.GUI.Item": {}}] run item replace entity @s player.cursor from entity @s enderchest.17
 
 # 何もないところをクリックしたらの処理
-  ## ボタン押したときの効果音
-    execute if data storage infinite_ender_chest:temp {isClicked:true} run playsound ui.button.click master @s
 
   ## GUI設置
-    $execute if data storage infinite_ender_chest:temp {isClicked:true} run item replace entity @s enderchest.17 with black_stained_glass_pane[custom_data={InfiniteEnderChest.GUI.Item: {id:"GUI.Placeholder"}}, item_name='{"text":"$(ender_chest_current_page)ページ"}'] 1
+    execute if data storage infinite_ender_chest:temp {isClicked:true} run item replace entity @s enderchest.17 with black_stained_glass_pane[custom_data={InfiniteEnderChest.GUI.Item: {id:"GUI.Placeholder"}}, hide_tooltip={}] 1
 # エンドボタンをクリックしたか
   execute store success storage infinite_ender_chest:temp isClicked byte 1.0 run clear @s *[minecraft:custom_data~{"InfiniteEnderChest.GUI.Item": {id:"GUI.End"}}]
 
@@ -96,8 +95,8 @@
 
 # エンドボタンをクリックしたらの処理
   ## ボタン押したときの効果音
-    execute if data storage infinite_ender_chest:temp {isClicked:true} run playsound ui.button.click master @s
 
   ## GUI設置
-    execute if score @s InfiniteEnderChest.Page matches ..1 if data storage infinite_ender_chest:temp {isClicked:true} run item replace entity @s enderchest.8 with barrier[custom_data={InfiniteEnderChest.GUI.Item: {id:"GUI.End"}}, item_name='{"text": "ここまで"}', rarity="common"] 1
-    execute if score @s InfiniteEnderChest.Page matches 4.. if data storage infinite_ender_chest:temp {isClicked:true} run item replace entity @s enderchest.26 with barrier[custom_data={InfiniteEnderChest.GUI.Item: {id:"GUI.End"}}, item_name='{"text": "ここまで"}', rarity="common"] 1
+    execute if score @s InfiniteEnderChest.Page matches ..1 if data storage infinite_ender_chest:temp {isClicked:true} run item replace entity @s enderchest.8 with black_stained_glass_pane[custom_data={InfiniteEnderChest.GUI.Item: {id:"GUI.End"}}, hide_tooltip={}] 1
+    # execute if score @s InfiniteEnderChest.Page matches 4.. if data storage infinite_ender_chest:temp {isClicked:true} run item replace entity @s enderchest.26 with barrier[custom_data={InfiniteEnderChest.GUI.Item: {id:"GUI.End"}}, item_name='{"text": "ここまで"}', rarity="common"] 1
+    execute if score @s InfiniteEnderChest.Page >= @s InfiniteEnderChest.MaxPage if data storage infinite_ender_chest:temp {isClicked:true} run item replace entity @s enderchest.26 with black_stained_glass_pane[custom_data={InfiniteEnderChest.GUI.Item: {id:"GUI.End"}}, hide_tooltip={}] 1
